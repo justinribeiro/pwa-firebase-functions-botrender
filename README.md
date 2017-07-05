@@ -19,7 +19,8 @@ This consists of a few pieces to provide our example:
 5. Run `npm install` in the functions directory.
 6. Have that URL handy from step 1? Great! Set the firebase config variable `firebase functions:config:set botrender.server="https://YOUR_PROJECT_HERE.appspot.com/"` 
 7. Cool. Now tell firebase where this domain is: `firebase functions:config:set site.domain="YOUR_SUB_DOMAIN_HERE.firebaseapp.com"`
-8. Deploy. Have a victory dance.
+8. Build the sample with the polymer-cli: `polymer build`
+8. Deploy with `firebase deploy`. Have a victory dance.
 
 ### What do I do now?
 
@@ -31,4 +32,5 @@ You could give one of the views a spin in say the Twitter [Card Validator](https
 
 1. The PWA shell is dupped as `pwashell.js`. I suspect there is a way around this, I just haven't read the docs fully enough.
 2. The `index.html` page (your PWA shell), basically will always fire as a direct match because of "Hosting Priorities" (see https://firebase.google.com/docs/hosting/url-redirects-rewrites). Your `index.html` should not expect to have JavaScript written metadata.
+3. You'll need a billing account for Firebase (Blaze pay-as-you-go), otherwise the external network request to App Engine (or where ever you deployed the docker container) will fail.
 3. Probably other things that I'm missing the day before a holiday.
