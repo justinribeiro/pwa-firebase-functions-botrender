@@ -64,10 +64,21 @@ app.get('*', (req, res) => {
         return res.text();
       }).then(function(body) {
 
-        // This is only going to return the HEAD of the document, nothing else (WHICH IS AWESOME)
+        // This is only going to return the HEAD of the document, nothing else 
+        // This is debatably AWESOME (save some bytes, give the bots only what they want)
         // See https://github.com/samuelli/bot-render/blob/master/renderer.js#L37
+
+        // We set Vary because we only want to cache this result for the bots
+        // which we know based on the user-agent. Vary is very useful.
+        // Reading about Vary header: 
+        //  https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary
+        //  https://www.fastly.com/blog/best-practices-using-vary-header/
+        res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
+        res.set('Vary', 'User-Agent');
+        
         res.send(body.toString());
-      });
+      
+    });
 
   } else {
 
