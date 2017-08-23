@@ -8,16 +8,16 @@ This consists of a few pieces to provide our example:
 
 1. Polymer Starter Kit with PRPL that changes page metadata with JavaScript. Could be any PWA, but this is what I've used for the sake of speed of this example.
 2. A Firebase function that checks UserAgent against a known list of linkbots that might render your content without JavaScript.
-3. Sam's [samuelli/bot-render](https://github.com/samuelli/bot-render), which is a docker container that uses Chrome headless and Chrome Debugging Protocal to provide a render of page.
+3. Initially, this was centered around Sam's [samuelli/bot-render](https://github.com/samuelli/bot-render), which is a docker container that uses Chrome headless and Chrome Debugging Protocal to provide a render of page. Chrome team has since released [Rendertron](https://github.com/GoogleChrome/rendertron), a dockerized, headless Chrome rendering solution designed to render & serialise web pages on the fly.
 
 ### Setup
 
-1. Deploy Sam's [samuelli/bot-render](https://github.com/samuelli/bot-render) to App Engine (the repo is already setup for this). Keep URL your deploy is running on handy, you'll need it shortly.
+1. Deploy and use Chrome teams' [Rendertron](https://github.com/GoogleChrome/rendertron), a dockerized, headless Chrome rendering solution designed to render & serialise web pages on the fly.
 2. Create a project on Firebase.
 3. Clone this repo.
 4. Run `bower install` in the project directory
 5. Run `npm install` in the functions directory.
-6. Have that URL handy from step 1? Great! Set the firebase config variable `firebase functions:config:set botrender.server="https://YOUR_PROJECT_HERE.appspot.com/"` 
+6. Have that URL handy from step 1? Great! Set the firebase config variable `firebase functions:config:set botrender.server="https://YOUR_PROJECT_HERE.appspot.com/"`
 7. Cool. Now tell firebase where this domain is: `firebase functions:config:set site.domain="YOUR_SUB_DOMAIN_HERE.firebaseapp.com"`
 8. Build the sample with the polymer-cli: `polymer build`
 8. Deploy with `firebase deploy`. Have a victory dance.
