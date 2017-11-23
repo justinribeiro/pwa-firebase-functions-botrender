@@ -32,9 +32,9 @@ You could give one of the views a spin in say the Twitter [Card Validator](https
 
 1. The PWA shell is dupped as `pwashell.js`. I suspect there is a way around this, I just haven't read the docs fully enough.
 2. The `index.html` page (your PWA shell), basically will always fire as a direct match because of "Hosting Priorities" (see https://firebase.google.com/docs/hosting/url-redirects-rewrites). Your `index.html` should not expect to have JavaScript written metadata.
-3. You'll need a billing account for Firebase (Blaze pay-as-you-go), otherwise the external network request to App Engine (or where ever you deployed the docker container) will fail.
+3. You'll need a paid plan for Firebase (Flame or Blaze), otherwise the external network request to App Engine (or where ever you deployed the docker container) will fail.
 3. Probably other things that I'm missing the day before a holiday.
 
 ### Additional Notes / Questions
 1. Initially, this was centered around Sam's initial concept [samuelli/bot-render](https://github.com/samuelli/bot-render), which is what became [Rendertron](https://github.com/GoogleChrome/rendertron).
-2. _"Justin, do I have to run rendertron or can I just do this myself?"_ - You can run chrome headless on your desktop, you can use my [chomre-headless docker image](https://hub.docker.com/r/justinribeiro/chrome-headless/) and talk to it via [puppeteer](https://github.com/GoogleChrome/puppeteer) (which utilizes [Chrome DevTools Protocal](https://chromedevtools.github.io/devtools-protocol/)).
+2. _"Justin, do I have to run rendertron or can I just do this myself?"_ - You can run chrome headless on your desktop, you can use my [chrome-headless docker image](https://hub.docker.com/r/justinribeiro/chrome-headless/) and talk to it via [puppeteer](https://github.com/GoogleChrome/puppeteer) (which utilizes [Chrome DevTools Protocal](https://chromedevtools.github.io/devtools-protocol/)).
