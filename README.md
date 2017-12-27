@@ -8,7 +8,7 @@ This consists of a few pieces to provide our example:
 
 1. Polymer Starter Kit with PRPL that changes page metadata with JavaScript. Could be any PWA, but this is what I've used for the sake of speed of this example.
 2. A Firebase function that checks UserAgent against a known list of linkbots that might render your content without JavaScript.
-3. [Rendertron](https://github.com/GoogleChrome/rendertron), a dockerized, headless Chrome rendering solution designed to render & serialise web pages on the fly, acts are our go between.
+3. [Rendertron](https://github.com/GoogleChrome/rendertron), a dockerized, headless Chrome rendering solution designed to render & serialise web pages on the fly, acts as our go between.
 
 ### Setup
 
