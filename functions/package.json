@@ -2,7 +2,7 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "firebase-functions": "^2.0.5",
     "node-fetch": "^1.7.3"
   },
